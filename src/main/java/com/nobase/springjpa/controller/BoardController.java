@@ -5,10 +5,7 @@ import com.nobase.springjpa.entity.Board;
 import com.nobase.springjpa.service.BoardService;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +23,8 @@ public class BoardController {
     }
     // 게시글 조회 -
     // 게시글 전체 조회 - 최신순 정렬
+
+   @GetMapping("/boardList")
     public List<Board> boardList(){
         return boardService.callBoardList();
     }
