@@ -25,10 +25,14 @@ public class Board extends TimeStamp {
     private String password;
     //작성 날짜는 상속 받아 처리함.
 
+
+
     public Board(BoardRequest boardRequest) {
         this.title = boardRequest.getTitle();
         this.writer = boardRequest.getWriter();
         this.password = boardRequest.getPassword();
         this.content = boardRequest.getContent();
     }
+
+
 }
