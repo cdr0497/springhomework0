@@ -2,6 +2,7 @@ package com.nobase.springjpa.service;
 
 import com.nobase.springjpa.dto.BoardRequest;
 import com.nobase.springjpa.entity.Board;
+import com.nobase.springjpa.repository.BoardListMapping;
 import com.nobase.springjpa.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,10 @@ public class BoardService {
         return board;
     }
 
-    public List<Board> callBoardList() {
-        return boardRepository.findAll();
+    public List<BoardListMapping> callBoardList() {
+        return boardRepository.findAllBy();
+        // 특정 정보는 빼고 반환하는 방법.
+        // ... 검색해보자.
+        //
     }
 }

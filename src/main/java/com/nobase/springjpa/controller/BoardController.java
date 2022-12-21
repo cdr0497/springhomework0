@@ -2,6 +2,7 @@ package com.nobase.springjpa.controller;
 
 import com.nobase.springjpa.dto.BoardRequest;
 import com.nobase.springjpa.entity.Board;
+import com.nobase.springjpa.repository.BoardListMapping;
 import com.nobase.springjpa.service.BoardService;
 
 import lombok.RequiredArgsConstructor;
@@ -25,7 +26,7 @@ public class BoardController {
     // 게시글 전체 조회 - 최신순 정렬
 
    @GetMapping("/boardList")
-    public List<Board> boardList(){
+    public List<BoardListMapping> boardList(){
         return boardService.callBoardList();
     }
 
