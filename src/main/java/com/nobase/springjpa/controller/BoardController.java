@@ -25,7 +25,6 @@ public class BoardController {
     }
     // 게시글 조회 -
     // 게시글 전체 조회 - 최신순 정렬
-
    @GetMapping("/boards")
     public List<CallBoardResponse> getBoards(){
         return boardService.getBoards();
@@ -45,8 +44,8 @@ public class BoardController {
     // 게시글 삭제
     // ㅔ param > parameter > /posts/1?inputPassword= 123
     @DeleteMapping("/boards/{boardId}") // @DeleteMapping 은 Body 를 보내지 못한다.
-    public void  deletePost(@PathVariable Long boardId, @RequestParam String inputPassword) {   //@RequestParam? 파라미터 ? 매개변수 ? 지정 매겨변수 1개
-        boardService.deleteBoard(boardId, inputPassword);
+    public String deletePost(@PathVariable Long boardId, @RequestParam String inputPassword) {   //@RequestParam? 파라미터 ? 매개변수 ? 지정 매겨변수 1개
+        return boardService.deleteBoard(boardId, inputPassword);
     }
 
 
