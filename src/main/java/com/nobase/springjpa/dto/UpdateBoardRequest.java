@@ -2,19 +2,21 @@ package com.nobase.springjpa.dto;
 
 import com.nobase.springjpa.entity.Board;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
-public class BoardResponse {
-    // 제목, 작성자명, 작성 내용, 작성 날짜
+@NoArgsConstructor
+public class UpdateBoardRequest {
+
     private String title;
     private String writer;
     private String content;
-    private String createdAt;
+    private String password;
 
-    public BoardResponse(Board board) {
+    public UpdateBoardRequest(Board board) {
         this.title = board.getTitle();
         this.writer = board.getWriter();
         this.content = board.getContent();
-        this.createdAt = String.valueOf(board.getCreatedAt());
+        this.password = board.getPassword();
     }
 }
